@@ -1,6 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using ProIrrigServer.Models;
+
 namespace ProIrrigServer.Data;
 
-public class DbContext : Microsoft.EntityFrameworkCore.DbContext
+public class ProIrrigDbContext : DbContext
 {
-    public 
+    public ProIrrigDbContext(DbContextOptions<ProIrrigDbContext> options) : base(options)
+    {
+    }
+    
+    public DbSet<User> Users { get; set; }
 }
